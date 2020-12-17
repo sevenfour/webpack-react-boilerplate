@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loading /> component tests renders 1`] = `
+<div
+  className="spinner"
+  role="progressbar"
+>
+  <p
+    className="visuallyHidden"
+  >
+    Content is loading
+  </p>
+  <Circle
+    className="circleIcon"
+    color="transparent"
+  />
+</div>
+`;
