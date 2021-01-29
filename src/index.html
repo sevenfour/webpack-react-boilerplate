@@ -2,6 +2,140 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script>
+      function isIE() {
+        var userAgent = (navigator && navigator.userAgent || '').toLowerCase();
+
+        var match = userAgent.match(/(?:msie |trident.+?; rv:)(\d+)/);
+
+        return match !== null;
+      };
+
+      isIE() && window.location.replace(window.location.origin + '/ie.html');
+    </script>
+    <style>
+      /*
+       * NOTE: the idea was borrowed from here:
+       * https://propjockey.github.io/css-media-vars/
+       * This is a reduced subset of media variables
+       *
+       * xs = 0px to 480px, (0em+)
+       * sm = 480px to 800px, (30em+)
+       * md = 800px to 1000px, (50em+)
+       * lg = 1000px to 1200px, (62.5em+)
+       * xl = 1200px and up (75em+)
+      */
+
+      html {
+        --media-xs: initial; /* only extra-small: below 480px */
+        --media-sm: initial; /* only small: between 480px and 800px */
+        --media-md: initial; /* only medium: between 800px and 1000px */
+        --media-lg: initial; /* only large: 1000px and 1200px */
+        --media-xl: initial; /* only extra large: 1200px and up */
+
+        /* lte (less than or equal) */
+        --media-lte-sm: initial; /* below 800px */
+        --media-lte-md: initial; /* below 1000px */
+        --media-lte-lg: initial; /* below 1200px */
+
+        /* gte (greater than or equal) */
+        --media-gte-sm: initial; /* 480px and above */
+        --media-gte-md: initial; /* 800px and above */
+        --media-gte-lg: initial; /* 1000px and above */
+
+        /* sets */
+        --media-sm-md: initial; /* small and medium only: 480px - 1000px */
+        --media-md-lg: initial; /* medium and large only: 800px - 1200px */
+        /* small, mediaum, and large only: 480px - 1200px */
+        --media-sm-md-lg: initial;
+
+        --media-portrait: initial;
+        --media-landscape: initial;
+
+        --media-prefers-reduced-motion: initial;
+      }
+
+      @media ( max-width: 29.99em ) {
+
+        html {
+          --media-xs: ;
+          --media-lte-sm: ;
+          --media-lte-md: ;
+          --media-lte-lg: ;
+        }
+      }
+
+      @media ( min-width: 30em ) and ( max-width: 49.99em ) {
+
+        html {
+          --media-sm: ;
+          --media-gte-sm: ;
+          --media-lte-sm: ;
+          --media-lte-md: ;
+          --media-lte-lg: ;
+          --media-sm-md: ;
+          --media-sm-md-lg: ;
+        }
+      }
+
+      @media ( min-width: 50em ) and ( max-width: 61.99em ) {
+
+        html {
+          --media-md: ;
+          --media-gte-sm: ;
+          --media-gte-md: ;
+          --media-lte-md: ;
+          --media-lte-lg: ;
+          --media-sm-md: ;
+          --media-sm-md-lg: ;
+          --media-md-lg: ;
+        }
+      }
+
+      @media ( min-width: 62em ) and ( max-width: 74.99em ) {
+
+        html {
+          --media-lg: ;
+          --media-gte-sm: ;
+          --media-gte-md: ;
+          --media-gte-lg: ;
+          --media-lte-lg: ;
+          --media-sm-md-lg: ;
+          --media-md-lg: ;
+        }
+      }
+
+      @media ( min-width: 75em ) {
+
+        html {
+          --media-xl: ;
+          --media-gte-sm: ;
+          --media-gte-md: ;
+          --media-gte-lg: ;
+        }
+      }
+
+      @media ( prefers-reduced-motion ) {
+
+        html {
+          --media-prefers-reduced-motion: ;
+        }
+      }
+
+      @media ( orientation: landscape ) {
+
+        html {
+          --media-landscape: ;
+        }
+      }
+
+      @media ( orientation: portrait ) {
+
+        html {
+          --media-portrait: ;
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -2,6 +2,9 @@ import React, { Suspense } from 'react';
 
 import Loading from 'components/Loading';
 
+/* Import global styles */
+import 'styles/index.css';
+
 const App = () => {
   return (
     <Suspense fallback={<Loading overlay />}>

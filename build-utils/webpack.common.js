@@ -1,31 +1,37 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.js'),
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-    ],
-  },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
-      components: path.resolve(__dirname, '..', './src/components'),
-      styles: path.resolve(__dirname, '..', './src/styles')
+      styles: path.resolve(__dirname, '..', './src/styles'),
+      components: path.resolve(__dirname, '..', './src/components')
     }
   },
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.(png|ico|jpeg|jpg|webp)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      }
+    ]
+  },
   plugins: [
+    new Dotenv({
+      path: path.resolve(__dirname, '..', './.env.development'),
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', './src/index.html')
@@ -33,11 +39,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, '..', './dist'),
-    filename: 'bundle.js',
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, '..', './dist'),
-    historyApiFallback: true,
-    hot: true
+    publicPath: '/',
+    filename: '[contenthash].bundle.js'
   }
 };

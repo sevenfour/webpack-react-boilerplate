@@ -6,7 +6,6 @@ import clsx from 'clsx';
 import { Circle } from '../icons';
 
 import styles from './Loading.module.css';
-import stylesUtilities from 'styles/Utilities.module.css';
 
 const Loading = props => {
 
@@ -22,7 +21,7 @@ const Loading = props => {
       role="progressbar"
       {...rest}
     >
-      <p className={stylesUtilities.visuallyHidden}>
+      <p className="visuallyHidden">
         Content is loading
       </p>
       <Circle

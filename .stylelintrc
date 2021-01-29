@@ -99,8 +99,8 @@
     'selector-max-compound-selectors': 4,
     'selector-max-combinators': 2,
     'selector-max-id': 1,
-    'selector-max-type': 1,
-    'selector-max-universal': 0,
+    'selector-max-type': 3,
+    'selector-max-universal': 2,
     'selector-no-qualifying-type': [ true,
       {
         'ignore': ['attribute']
@@ -176,7 +176,14 @@
       ]
     ],
 
-    "plugin/stylelint-no-indistinguishable-colors": true,
+    "plugin/stylelint-no-indistinguishable-colors": [
+      true,
+      {
+        ignore: [
+          '#000000'
+        ]
+      }
+    ],
 
     "plugin/declaration-block-no-ignored-properties": true,
 
