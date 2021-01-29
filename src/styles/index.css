@@ -1,0 +1,12 @@
+
+/* Import normalization styles  */
+@import '../../node_modules/modern-normalize/modern-normalize.css';
+
+/* Import CSS variables */
+@import './CustomProperties.css';
+
+/* Import global base styles */
+@import './Base.css';
+
+/* Import CSS utility classes  */
+@import './Utilities.css';

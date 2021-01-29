@@ -1,0 +1,75 @@
+
+:root {
+  /* Modular scale  - START - ----------------------------------------------- */
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));  /* 0.132rem -> 2.112px */
+  --s-4: calc(var(--s-3) / var(--ratio));  /* 0.198rem -> 3.168px */
+  --s-3: calc(var(--s-2) / var(--ratio));  /* 0.297rem -> 4.752px */
+  --s-2: calc(var(--s-1) / var(--ratio));  /* 0.445rem -> 7.12px */
+  --s-1: calc(var(--s0) / var(--ratio));  /* 0.667rem -> 10.672px */
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));  /* 1.5rem -> 24px */
+  --s2: calc(var(--s1) * var(--ratio));  /* 2.25rem -> 36px */
+  --s3: calc(var(--s2) * var(--ratio));  /* 3.375rem -> 54px */
+  --s4: calc(var(--s3) * var(--ratio));  /* 5.0625rem -> 81px */
+  --s5: calc(var(--s4) * var(--ratio));  /* 7.594rem -> 121.504px */
+  /* Modular scale  - END - ------------------------------------------------- */
+
+  /* Max width measure - START - -------------------------------------------- */
+  --measure: 60ch;
+  /* Max width measure - END - ---------------------------------------------- */
+
+  /* Font sizing - START - -------------------------------------------------- */
+  --font-size-small: var(--s-1);
+  --font-size-base: var(--s0);
+  --font-size-bigger: calc(var(--s0) + var(--s-4));
+  --font-size-big: var(--s2);
+  --font-size-bigest: var(--s3);
+  /* Font sizing - END - ---------------------------------------------------- */
+
+  /* Colours - START - ------------------------------------------------------ */
+  /*
+   * Colours are borrowed from Tailwind:
+   * https://tailwindcss.com/docs/customizing-colors
+   */
+  --transparent: 'transparent';
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-900: #111827;
+  --black: #000000;
+  --white: #ffffff;
+  --blue-400: #60a5fa;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --red-600: #dc2626;
+  --yellow-400: #fbbf24;
+  --green-700: #047857;
+
+  --info: var(--blue-600);
+  --error: var(--red-600);
+  --warning: var(--yellow-400);
+  --success: var(--green-700);
+
+  --gray-alpha-10: rgba(0, 0, 0, 0.1);
+  --gray-alpha-15: rgba(0, 0, 0, 0.15);
+  /* Colours - END - -------------------------------------------------------- */
+
+  /* Opacity properties - START - ------------------------------------ */
+  --hover-opacity: .75;
+  --disabled-opacity: .5;
+  /* Opacity properties - START - ------------------------------------ */
+
+  /* Box shadows */
+  --shadow: 0 0 var(--black);
+
+  --shadow-base:
+      0 1px 1px 0 rgba(0, 0, 0, 0.14),
+      0 2px 1px -1px rgba(0, 0, 0, 0.12),
+      0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+  --ring-offset-shadow: 0 0 var(--black);
+  --ring-shadow: 0 0 var(--black);
+
+  /* Accessible minimal clickable area */
+  --min-clickable-size: 44px;
+}

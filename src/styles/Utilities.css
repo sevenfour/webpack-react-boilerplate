@@ -1,0 +1,85 @@
+/* Minor collection of utility classes */
+
+.visuallyHidden {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-width\:measure {
+  max-width: var(--measure);
+}
+
+.max-width\:measure\/2 {
+  max-width: calc(var(--measure) / 2);
+}
+
+.font-size\:small {
+  font-size: var(--font-size-small);
+}
+
+.font-size\:base {
+  font-size: var(--font-size-base);
+}
+
+.font-size\:bigger {
+  font-size: var(--font-size-bigger);
+}
+
+.font-size\:big {
+  font-size: var(--font-size-big);
+}
+
+.super-centered {
+  display: grid;
+  place-items: center;
+}
+
+.flex-centered {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex-centered-justified-center {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-centered-justified-around {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.rounded-border-md {
+  border-radius: 0.375rem;
+}
+
+.shadow {
+  box-shadow:
+    var(--ring-offset-shadow, 0 0 #000000),
+    var(--ring-shadow, 0 0 #000000),
+    var(--shadow);
+}
+
+.shadow-sm {
+  --shadow:
+    0 1px 3px 0 var(--gray-alpha-10),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.shadow-md {
+  --shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
